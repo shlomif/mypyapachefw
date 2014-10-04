@@ -1,8 +1,8 @@
 README - My Python Apache Firewall
 =====
-MyPyApache FW is a loganalyzer written in python.
-The script will work on any access log you pipe in to it and will create iptables rules to block
-client ip addresses which may are malicious to the system.
+MyPyApache FW is a log-analyzer written in python.
+The script will work on any access log you pipe into it and will create iptables rules to block
+client IP addresses which may be malicious to the system.
 
 ## Requires
 * python iptables
@@ -19,11 +19,11 @@ pip install --upgrade python-geoip-geolite2
 ```
 
 ## Console run
-You need to run the script on console like
+You need to run the script on the console like
 ```
 cat /var/log/apache2/access.log | python mypyfw.py
 ```
-May you want to write a cronjob to do it every some minuits, and work with tail, like
+You may wish to write a cronjob to do it every few minutes, using tail, like
 ```
 */30 * * * * tail -n 500 /var/log/apache2/other_vhosts_access.log | python /opt/mypyapachefw/mypyfw.py
 
@@ -48,9 +48,9 @@ Options:
 
 ```
 
-## Need to know
-The IP split line may has an error.
-By default the IP should be located at cell 1 (for combined logging). If you use the standard apache logging than it may is 0.
+## Important Notes
+The IP split line may have an error.
+By default the IP should be located at cell 1 (for combined logging). If you use the standard apache logging than it may be 0.
 ```
 cat /var/log/apache2/access.log | python mypyfw.py -i 0
 ```
